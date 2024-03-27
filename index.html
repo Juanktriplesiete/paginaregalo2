@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿PODEMOS SEGUIR COMO AMIGOS?</title>
+    <style>
+        /* Estilos para los botones */
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px auto;
+            display: block;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        #yes-btn {
+            background-color: green;
+            color: white;
+        }
+        #no-btn {
+            background-color: red;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+        }
+        body {
+            background-image: url('caida.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        #image-container {
+            text-align: center;
+            margin-top: 50px; /* Ajuste la distancia hacia abajo */
+        }
+    </style>
+</head>
+<body>
+    <h1>¿PODEMOS SEGUIR COMO AMIGOS?</h1>
+    <button id="yes-btn" class="btn" onclick="showImage()">Sí</button>
+    <button id="no-btn" class="btn" onclick="increaseSizeAndMessage()">No</button>
+    <div id="image-container" style="display: none;">
+        <img src="cr7.gif" alt="cr7">
+    </div>
+    <script>
+        function showImage() {
+            // Muestra la imagen de Messi
+            document.getElementById("image-container").style.display = "block";
+        }
+
+        function increaseSizeAndMessage() {
+            // Duplica el tamaño del botón 'No'
+            var noBtn = document.getElementById("no-btn");
+            var computedStyle = window.getComputedStyle(noBtn);
+            var currentSize = parseInt(computedStyle.fontSize);
+            var newSize = currentSize * 2; // Aumenta el tamaño al doble
+            noBtn.style.fontSize = newSize + "px";
+
+            // Muestra los mensajes uno por uno con un ligero retraso
+            setTimeout(function() {
+                alert("SOLO COMO AMIGOS, ES TODO ");
+            }, 500); // 500 milisegundos de retraso
+            setTimeout(function() {
+                alert("NO TE VAS A ARREPENTIR, CREEME");
+            }, 1000); // 1000 milisegundos de retraso
+        }
+    </script>
+</body>
+</html>
